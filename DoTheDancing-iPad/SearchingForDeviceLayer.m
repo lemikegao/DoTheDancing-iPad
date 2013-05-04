@@ -20,6 +20,8 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
+        _screenSize = [CCDirector sharedDirector].winSize;
+        
         [self displaySearchingForDevice];
         [self displayBackButton];
         [self startSearchingForDevice];
@@ -36,6 +38,7 @@
 
 -(void)displayBackButton {
     CCMenuItemLabel *backButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Back" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
+        [GameManager sharedGameManager].matchmakingPeer.quitReason = QuitReasonNone;
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMainMenu];
     }];
     backButton.anchorPoint = ccp(0, 1);
@@ -47,7 +50,10 @@
 }
 
 -(void)startSearchingForDevice {
-    
+    GameManager *gm = [GameManager sharedGameManager];
+    gm.matchmakingPeer = [[MatchmakingPeer alloc] init];
+    gm.matchmakingPeer.delegate = self;
+    [gm.matchmakingPeer startSearchingForPeersWithSessionID:SESSION_ID];
 }
 
 @end

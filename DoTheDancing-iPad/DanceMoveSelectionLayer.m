@@ -10,7 +10,6 @@
 #import "GameManager.h"
 #import "DanceMoveBernie.h"
 #import "CCTouchDownMenu.h"
-#import "PacketSegueToDanceMoveInstructions.h"
 
 @interface DanceMoveSelectionLayer()
 
@@ -33,18 +32,9 @@
         [GameManager sharedGameManager].individualDanceMove = nil;
         
         [self displayTopBar];
-        
-        // if single player or host, display menu
-        GameManager *gm = [GameManager sharedGameManager];
-        if ((!gm.isMultiplayer) || (gm.isMultiplayer && gm.isHost)) {
-            [self displayDanceMoves];
-            [self displayPageLabels];
-            [self displayMenu];
-        } else {
-            // set new delegate for client
-            gm.client.delegate = self;
-            // display waiting prompt
-        }
+        [self displayDanceMoves];
+        [self displayPageLabels];
+        [self displayMenu];
     }
     
     return self;
@@ -151,10 +141,6 @@
         
         // if multiplayer and host, send packet to clients
         GameManager *gm = [GameManager sharedGameManager];
-        if (gm.isMultiplayer && gm.isHost) {
-            Packet *packet = [PacketSegueToDanceMoveInstructions packetWithDanceMoveType:danceMoveType];
-            [gm.server sendPacketToAllClients:packet];
-        }
         
         // set selected dance move and display instructions
         gm.individualDanceMove = danceMove;

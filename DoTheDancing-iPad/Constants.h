@@ -20,8 +20,6 @@ typedef enum {
     kSceneTypeDanceMoveSeeInAction,
     kSceneTypeDanceMoveDance,
     kSceneTypeDanceMoveResults,
-    kSceneTypeMultiplayerHostOrJoin,
-    kSceneTypeMultiplayerWaitingRoom
 } SceneTypes;
 
 typedef enum {
