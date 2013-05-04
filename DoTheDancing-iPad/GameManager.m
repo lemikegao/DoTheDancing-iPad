@@ -7,8 +7,8 @@
 //
 
 #import "GameManager.h"
-#import "TestMotionScene.h"
 #import "MainMenuScene.h"
+#import "SearchingForDeviceScene.h"
 #import "DanceMoveSelectionScene.h"
 #import "DanceMoveInstructionsScene.h"
 #import "DanceMoveSeeInActionScene.h"
@@ -166,11 +166,11 @@ static GameManager *_sharedGameManager = nil;   // singleton
         case kSceneTypeNone:
             result = @"kSceneTypeNone";
             break;
-        case kSceneTypeTestMotion:
-            result = @"kSceneTypeTestMotion";
-            break;
         case kSceneTypeMainMenu:
             result = @"kSceneTypeMainMenu";
+            break;
+        case kSceneTypeSearchingForDevice:
+            result = @"kSceneTypeSearchingForDevice";
             break;
         case kSceneTypeDanceMoveSelection:
             result = @"kSceneTypeDanceMoveSelection";
@@ -366,8 +366,8 @@ static GameManager *_sharedGameManager = nil;   // singleton
         case kSceneTypeMainMenu:
             sceneToRun = [MainMenuScene node];
             break;
-        case kSceneTypeTestMotion:
-            sceneToRun = [TestMotionScene node];
+        case kSceneTypeSearchingForDevice:
+            sceneToRun = [SearchingForDeviceScene node];
             break;
         case kSceneTypeDanceMoveSelection:
             sceneToRun = [DanceMoveSelectionScene node];

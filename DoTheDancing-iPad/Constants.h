@@ -13,8 +13,8 @@
 
 typedef enum {
     kSceneTypeNone = -1,
-    kSceneTypeTestMotion,
     kSceneTypeMainMenu,
+    kSceneTypeSearchingForDevice,
     kSceneTypeDanceMoveSelection,
     kSceneTypeDanceMoveInstructions,
     kSceneTypeDanceMoveSeeInAction,

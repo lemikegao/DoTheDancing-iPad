@@ -60,33 +60,16 @@
 }
 
 -(void)displayMenu {
-    CCSprite *menuBg = [CCSprite spriteWithSpriteFrameName:@"mainmenu_cream_box.png"];
-    if (IS_IPHONE_4) {
-        menuBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.52);
-    } else {
-        menuBg.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.58);
-    }
-    
-    CCMenuItemSprite *singlePlayerButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_single1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_single2.png"] block:^(id sender) {
-        [GameManager sharedGameManager].isMultiplayer = NO;
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveSelection];
+    CCMenuItemLabel *connectButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Connect to Device" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
+        // segue to 'Searching for Device...'
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeSearchingForDevice];
     }];
-    singlePlayerButton.anchorPoint = ccp(0.5, 1);
-    singlePlayerButton.position = ccp(menuBg.contentSize.width * 0.5, menuBg.contentSize.height * 0.9);
+    connectButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
     
-    CCMenuItemSprite *multiplayerButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_multi1.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"mainmenu_button_multi2.png"] block:^(id sender) {
-        [GameManager sharedGameManager].isMultiplayer = YES;
-        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMultiplayerHostOrJoin];
-    }];
-    multiplayerButton.anchorPoint = ccp(0.5, 0);
-    multiplayerButton.position = ccp(menuBg.contentSize.width * 0.5, menuBg.contentSize.height * 0.1);
-    
-    CCMenu *menu = [CCMenu menuWithItems:singlePlayerButton, multiplayerButton, nil];
+    CCMenu *menu = [CCMenu menuWithItems:connectButton, nil];
     menu.position = ccp(0, 0);
     
-    [menuBg addChild:menu];
-    
-    [self addChild:menuBg];
+    [self addChild:menu];
 }
 
 @end
