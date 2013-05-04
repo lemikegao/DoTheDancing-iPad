@@ -36,7 +36,7 @@
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
 		C47EBB2017359BFC003D8372 /* SearchingForDeviceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB1F17359BFC003D8372 /* SearchingForDeviceScene.m */; };
 		C47EBB2317359C04003D8372 /* SearchingForDeviceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB2217359C04003D8372 /* SearchingForDeviceLayer.m */; };
-		C47EBB2617359E34003D8372 /* MatchmakingPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB2517359E34003D8372 /* MatchmakingPeer.m */; };
+		C47EBB3B1735CBE7003D8372 /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB3A1735CBE7003D8372 /* MatchmakingServer.m */; };
 		C47F729D16DF8DAA0006EEFB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729316DF8DAA0006EEFB /* Icon-72.png */; };
 		C47F729E16DF8DAA0006EEFB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */; };
 		C47F729F16DF8DAA0006EEFB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */; };
@@ -370,8 +370,8 @@
 		C47EBB1F17359BFC003D8372 /* SearchingForDeviceScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingForDeviceScene.m; sourceTree = "<group>"; };
 		C47EBB2117359C04003D8372 /* SearchingForDeviceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingForDeviceLayer.h; sourceTree = "<group>"; };
 		C47EBB2217359C04003D8372 /* SearchingForDeviceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingForDeviceLayer.m; sourceTree = "<group>"; };
-		C47EBB2417359E34003D8372 /* MatchmakingPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingPeer.h; sourceTree = "<group>"; };
-		C47EBB2517359E34003D8372 /* MatchmakingPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingPeer.m; sourceTree = "<group>"; };
+		C47EBB391735CBE7003D8372 /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
+		C47EBB3A1735CBE7003D8372 /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
 		C47F729316DF8DAA0006EEFB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		C47F729416DF8DAA0006EEFB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		C47F729516DF8DAA0006EEFB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -763,8 +763,8 @@
 		C42FEB81172A00BB00B5DE03 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C47EBB2417359E34003D8372 /* MatchmakingPeer.h */,
-				C47EBB2517359E34003D8372 /* MatchmakingPeer.m */,
+				C47EBB391735CBE7003D8372 /* MatchmakingServer.h */,
+				C47EBB3A1735CBE7003D8372 /* MatchmakingServer.m */,
 				C45A0729172E28A1002ED7B7 /* Packet.h */,
 				C45A072A172E28A1002ED7B7 /* Packet.m */,
 				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
@@ -1677,7 +1677,7 @@
 				C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */,
 				C47EBB2017359BFC003D8372 /* SearchingForDeviceScene.m in Sources */,
 				C47EBB2317359C04003D8372 /* SearchingForDeviceLayer.m in Sources */,
-				C47EBB2617359E34003D8372 /* MatchmakingPeer.m in Sources */,
+				C47EBB3B1735CBE7003D8372 /* MatchmakingServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

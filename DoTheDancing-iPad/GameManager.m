@@ -63,10 +63,8 @@ static GameManager *_sharedGameManager = nil;   // singleton
         _individualDanceMove = nil;
         _danceMoveIterationResults = nil;
         
-        // multiplayer
-        _isMultiplayer = NO;
-        _isHost = NO;
-        _matchmakingPeer = nil;
+        // networking
+        _server = nil;
     }
     
     return self;

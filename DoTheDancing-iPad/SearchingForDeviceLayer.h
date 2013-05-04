@@ -7,8 +7,8 @@
 //
 
 #import "CCLayer.h"
-#import "MatchmakingPeer.h"
+#import "MatchmakingServer.h"
 
-@interface SearchingForDeviceLayer : CCLayer <MatchmakingPeerDelegate>
+@interface SearchingForDeviceLayer : CCLayer <MatchmakingServerDelegate>
 
 @end

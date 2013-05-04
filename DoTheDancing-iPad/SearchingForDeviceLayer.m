@@ -20,7 +20,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        _screenSize = [CCDirector sharedDirector].winSize;
+        self.screenSize = [CCDirector sharedDirector].winSize;
         
         [self displaySearchingForDevice];
         [self displayBackButton];
@@ -38,7 +38,8 @@
 
 -(void)displayBackButton {
     CCMenuItemLabel *backButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Back" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
-        [GameManager sharedGameManager].matchmakingPeer.quitReason = QuitReasonNone;
+        [GameManager sharedGameManager].server.quitReason = QuitReasonNone;
+        [[GameManager sharedGameManager].server endSession];
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMainMenu];
     }];
     backButton.anchorPoint = ccp(0, 1);
@@ -51,9 +52,23 @@
 
 -(void)startSearchingForDevice {
     GameManager *gm = [GameManager sharedGameManager];
-    gm.matchmakingPeer = [[MatchmakingPeer alloc] init];
-    gm.matchmakingPeer.delegate = self;
-    [gm.matchmakingPeer startSearchingForPeersWithSessionID:SESSION_ID];
+    gm.server = [[MatchmakingServer alloc] init];
+    gm.server.delegate = self;
+    [gm.server startAcceptingConnectionsForSessionID:SESSION_ID];
 }
+
+#pragma mark - MatchmakingServerDelegate methods
+-(void)matchmakingServerClientDidConnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerClientDidDisconnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerSessionDidEnd {
+    
+}
+
 
 @end
