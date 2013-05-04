@@ -1,1 +1,1 @@
-Do the Dancing!
+Do the Dancing! (iPad)
