@@ -41,10 +41,6 @@
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<dict>
-		<key>accelerometer</key>
-		<true/>
-		<key>gyroscope</key>
-		<true/>
 		<key>opengles-2</key>
 		<true/>
 		<key>peer-peer</key>
