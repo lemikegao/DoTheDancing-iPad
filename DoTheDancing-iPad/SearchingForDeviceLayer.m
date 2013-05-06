@@ -54,12 +54,12 @@
     GameManager *gm = [GameManager sharedGameManager];
     gm.server = [[MatchmakingServer alloc] init];
     gm.server.delegate = self;
-    [gm.server startAcceptingConnectionsForSessionID:SESSION_ID];
+    [gm.server startAcceptingConnectionsForSessionID:SESSION_ID_IPAD];
 }
 
 #pragma mark - MatchmakingServerDelegate methods
 -(void)matchmakingServerClientDidConnect:(NSString *)peerID {
-    
+    [[GameManager sharedGameManager] runSceneWithID:kSceneTypeConnectedToDevice];
 }
 
 -(void)matchmakingServerClientDidDisconnect:(NSString *)peerID {

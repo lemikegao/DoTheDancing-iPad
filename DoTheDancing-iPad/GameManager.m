@@ -9,6 +9,7 @@
 #import "GameManager.h"
 #import "MainMenuScene.h"
 #import "SearchingForDeviceScene.h"
+#import "ConnectedToDeviceScene.h"
 #import "DanceMoveSelectionScene.h"
 #import "DanceMoveInstructionsScene.h"
 #import "DanceMoveSeeInActionScene.h"
@@ -166,6 +167,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeSearchingForDevice:
             result = @"kSceneTypeSearchingForDevice";
+            break;
+        case kSceneTypeConnectedToDevice:
+            result = @"kSceneTypeConnectedToDevice";
             break;
         case kSceneTypeDanceMoveSelection:
             result = @"kSceneTypeDanceMoveSelection";
@@ -357,6 +361,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeSearchingForDevice:
             sceneToRun = [SearchingForDeviceScene node];
+            break;
+        case kSceneTypeConnectedToDevice:
+            sceneToRun = [ConnectedToDeviceScene node];
             break;
         case kSceneTypeDanceMoveSelection:
             sceneToRun = [DanceMoveSelectionScene node];

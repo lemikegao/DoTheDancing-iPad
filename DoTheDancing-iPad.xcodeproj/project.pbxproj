@@ -31,7 +31,9 @@
 		C45A072B172E28A1002ED7B7 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072A172E28A1002ED7B7 /* Packet.m */; };
 		C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */; };
 		C45A0733172E54E4002ED7B7 /* mainmenu_bg-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C45A0732172E54E4002ED7B7 /* mainmenu_bg-ipad.png */; };
-		C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46322441720F6C4007E39D5 /* CoreMotion.framework */; };
+		C4688D2817370C4100EB027E /* ConnectedToDeviceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4688D2717370C4100EB027E /* ConnectedToDeviceScene.m */; };
+		C4688D2B17370C4900EB027E /* ConnectedToDeviceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4688D2A17370C4900EB027E /* ConnectedToDeviceLayer.m */; };
+		C4688D2E17374E8500EB027E /* PacketStartDanceMoveDance.m in Sources */ = {isa = PBXBuildFile; fileRef = C4688D2D17374E8500EB027E /* PacketStartDanceMoveDance.m */; };
 		C46D83F61667001000C6529A /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F51667001000C6529A /* libFlurry.a */; };
 		C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D83F81667007800C6529A /* SystemConfiguration.framework */; };
 		C47EBB2017359BFC003D8372 /* SearchingForDeviceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C47EBB1F17359BFC003D8372 /* SearchingForDeviceScene.m */; };
@@ -363,6 +365,12 @@
 		C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DTDAdditions.m"; sourceTree = "<group>"; };
 		C45A0732172E54E4002ED7B7 /* mainmenu_bg-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu_bg-ipad.png"; sourceTree = "<group>"; };
 		C46322441720F6C4007E39D5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C4688D2617370C4100EB027E /* ConnectedToDeviceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedToDeviceScene.h; sourceTree = "<group>"; };
+		C4688D2717370C4100EB027E /* ConnectedToDeviceScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedToDeviceScene.m; sourceTree = "<group>"; };
+		C4688D2917370C4900EB027E /* ConnectedToDeviceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedToDeviceLayer.h; sourceTree = "<group>"; };
+		C4688D2A17370C4900EB027E /* ConnectedToDeviceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedToDeviceLayer.m; sourceTree = "<group>"; };
+		C4688D2C17374E8500EB027E /* PacketStartDanceMoveDance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketStartDanceMoveDance.h; sourceTree = "<group>"; };
+		C4688D2D17374E8500EB027E /* PacketStartDanceMoveDance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketStartDanceMoveDance.m; sourceTree = "<group>"; };
 		C46D83F41667001000C6529A /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		C46D83F51667001000C6529A /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C46D83F81667007800C6529A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -673,7 +681,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
-				C46322451720F6C4007E39D5 /* CoreMotion.framework in Frameworks */,
 				C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */,
 				DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */,
 				DC0C49F6154AB4DD00B4B727 /* QuartzCore.framework in Frameworks */,
@@ -767,10 +774,23 @@
 				C47EBB3A1735CBE7003D8372 /* MatchmakingServer.m */,
 				C45A0729172E28A1002ED7B7 /* Packet.h */,
 				C45A072A172E28A1002ED7B7 /* Packet.m */,
+				C4688D2C17374E8500EB027E /* PacketStartDanceMoveDance.h */,
+				C4688D2D17374E8500EB027E /* PacketStartDanceMoveDance.m */,
 				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
 				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		C4688D2517370C3100EB027E /* ConnectedToDevice */ = {
+			isa = PBXGroup;
+			children = (
+				C4688D2617370C4100EB027E /* ConnectedToDeviceScene.h */,
+				C4688D2717370C4100EB027E /* ConnectedToDeviceScene.m */,
+				C4688D2917370C4900EB027E /* ConnectedToDeviceLayer.h */,
+				C4688D2A17370C4900EB027E /* ConnectedToDeviceLayer.m */,
+			);
+			name = ConnectedToDevice;
 			sourceTree = "<group>";
 		};
 		C46D83F31667001000C6529A /* Flurry */ = {
@@ -875,6 +895,7 @@
 			children = (
 				C4993D2516576C70008187A8 /* MainMenu */,
 				C47EBB1D17359BE5003D8372 /* SearchingForDevice */,
+				C4688D2517370C3100EB027E /* ConnectedToDevice */,
 				C425AC191721FF69008FE344 /* DanceMoveSelection */,
 				C425AC2E17221DC8008FE344 /* DanceMoveInstructions */,
 				C498CCF21727394F00A2A0A8 /* DanceMoveSeeInAction */,
@@ -1678,6 +1699,9 @@
 				C47EBB2017359BFC003D8372 /* SearchingForDeviceScene.m in Sources */,
 				C47EBB2317359C04003D8372 /* SearchingForDeviceLayer.m in Sources */,
 				C47EBB3B1735CBE7003D8372 /* MatchmakingServer.m in Sources */,
+				C4688D2817370C4100EB027E /* ConnectedToDeviceScene.m in Sources */,
+				C4688D2B17370C4900EB027E /* ConnectedToDeviceLayer.m in Sources */,
+				C4688D2E17374E8500EB027E /* PacketStartDanceMoveDance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

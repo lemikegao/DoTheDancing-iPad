@@ -195,9 +195,17 @@
     [self addChild:menu];
 }
 
-# pragma mark - MatchmakingClient delegate methods
-- (void)matchmakingClientSegueToInstructionsWithDanceMoveType:(DanceMoves)danceMoveType {
-    [self showInstructionsForDanceMove:danceMoveType];
+#pragma mark - MatchmakingServerDelegate methods
+-(void)matchmakingServerClientDidConnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerClientDidDisconnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerSessionDidEnd {
+    
 }
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "CCLayer.h"
+#import "MatchmakingServer.h"
 
-@interface DanceMoveDanceLayer : CCLayer
+@interface DanceMoveDanceLayer : CCLayer <MatchmakingServerDelegate>
 
 @end

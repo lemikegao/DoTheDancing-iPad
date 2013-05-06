@@ -277,4 +277,17 @@
     }
 }
 
+#pragma mark - MatchmakingServerDelegate methods
+-(void)matchmakingServerClientDidConnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerClientDidDisconnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerSessionDidEnd {
+    
+}
+
 @end

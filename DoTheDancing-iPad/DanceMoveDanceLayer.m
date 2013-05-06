@@ -8,10 +8,9 @@
 
 #import "DanceMoveDanceLayer.h"
 #import "GameManager.h"
-#include <CoreMotion/CoreMotion.h>
-#import <CoreFoundation/CoreFoundation.h>
 #import "DanceMove.h"
 #import "Constants.h"
+#import "PacketStartDanceMoveDance.h"
 
 @interface DanceMoveDanceLayer()
 
@@ -25,9 +24,6 @@
 @property (nonatomic, strong) CCLabelBMFont *countdownLabel;
 @property (nonatomic, strong) CCLabelBMFont *stepCountLabel;
 @property (nonatomic, strong) CCProgressTimer *stepTimer;
-
-// motion detection
-@property (nonatomic, strong) CMMotionManager *motionManager;
 
 // countdown
 @property (nonatomic) CGFloat countdownElapsedTime;
@@ -61,13 +57,13 @@
         [self addChild:self.batchNode];
         self.danceMove = [GameManager sharedGameManager].individualDanceMove;
         
+        [self notifyDeviceToStartDetectingMovements];
         [self initCountdown];
         [self initDanceMoveDetection];
         [self displayTopBar];
         [self displayMovesCompletedBar];
         [self displayIllustration];
         [self addStepLabelAndTimer];
-        [self initMotionManager];
 
         // play background track
         [[GameManager sharedGameManager] playBackgroundTrack:self.danceMove.trackName];
@@ -77,9 +73,10 @@
     return self;
 }
 
--(void)onExit {
-    [self.motionManager stopDeviceMotionUpdates];
-    [super onExit];
+-(void)notifyDeviceToStartDetectingMovements {
+    // send packet to iphone
+    PacketStartDanceMoveDance *packet = [PacketStartDanceMoveDance packetWithDanceMoveType:self.danceMove.danceMoveType];
+    [[GameManager sharedGameManager].server sendPacketToAllClients:packet];
 }
 
 -(void)initCountdown {
@@ -199,13 +196,6 @@
     [self addChild:self.stepTimer];
 }
 
--(void)initMotionManager {    
-    self.motionManager = [[CMMotionManager alloc] init];
-    self.motionManager.deviceMotionUpdateInterval = 1.0/60.0f;
-    //    [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:(CMAttitudeReferenceFrameXArbitraryZVertical)];
-    [self.motionManager startDeviceMotionUpdates];
-}
-
 -(void)checkToStartCountdown {
     if (self.countdownElapsedTime >= self.danceMove.timeToStartCountdown) {
         self.isCountdownActivated = YES;
@@ -242,7 +232,7 @@
         if (self.currentIteration == self.danceMove.numIndividualIterations) {
             // end in action
             CCLOG(@"updateTimers: segue to results");
-            [self segueToResults];
+//            [self segueToResults];
         } else {
             // move on to next iteration
             CCLOG(@"updateTimers: move on to next iteration");
@@ -341,51 +331,12 @@
         self.currentStepElapsedTime = self.currentStepElapsedTime + delta;
         self.currentIterationElapsedTime = self.currentIterationElapsedTime + delta;
         [self updateTimers];
-        [self detectDancePart];
     } else if (self.isCountdownActivated == NO) {
         self.countdownElapsedTime = self.countdownElapsedTime + delta;
         [self checkToStartCountdown];
     }
 }
 
--(void)detectDancePart {
-    float yaw = (float)(CC_RADIANS_TO_DEGREES(self.motionManager.deviceMotion.attitude.yaw));
-    float pitch = (float)(CC_RADIANS_TO_DEGREES(self.motionManager.deviceMotion.attitude.pitch));
-    float roll = (float)(CC_RADIANS_TO_DEGREES(self.motionManager.deviceMotion.attitude.roll));
-    CMAcceleration totalAcceleration = self.motionManager.deviceMotion.userAcceleration;
-    
-    if (self.shouldDetectDanceMove) {
-        MotionRequirements *currentPartMotionRequirements = self.currentDanceStepParts[self.currentPart-1];
-        if ((yaw > currentPartMotionRequirements.yawMin) &&
-            (yaw < currentPartMotionRequirements.yawMax) &&
-            (pitch > currentPartMotionRequirements.pitchMin) &&
-            (pitch < currentPartMotionRequirements.pitchMax) &&
-            (roll > currentPartMotionRequirements.rollMin) &&
-            (roll < currentPartMotionRequirements.rollMax) &&
-            (totalAcceleration.x > currentPartMotionRequirements.accelerationXMin) &&
-            (totalAcceleration.x < currentPartMotionRequirements.accelerationXMax) &&
-            (totalAcceleration.y > currentPartMotionRequirements.accelerationYMin) &&
-            (totalAcceleration.y < currentPartMotionRequirements.accelerationYMax) &&
-            (totalAcceleration.z > currentPartMotionRequirements.accelerationZMin) &&
-            (totalAcceleration.z < currentPartMotionRequirements.accelerationZMax)) {
-            CCLOG(@"iteration: %i, step: %i, part: %i detected", self.currentIteration, self.currentStep, self.currentPart);
-            
-            [self moveOnToNextPart];
-        }
-    }
-}
-
--(void)moveOnToNextPart {
-    if (self.currentPart == self.currentDanceStepParts.count) {
-        // step detected!
-        self.shouldDetectDanceMove = NO;
-        CCLOG(@"Iteration: %i, Step: %i Successfully Detected!", self.currentIteration, self.currentStep);
-        self.currentIterationStepsDetected[self.currentStep-1] = [NSNumber numberWithBool:YES];
-    } else {
-        // move on to next part
-        self.currentPart++;
-    }
-}
 
 -(void)segueToResults {
     // add last step results
@@ -399,6 +350,19 @@
     // segue to results scene
     [[GameManager sharedGameManager] stopBackgroundTrack];
     [[GameManager sharedGameManager] runSceneWithID:kSceneTypeDanceMoveResults];
+}
+
+#pragma mark - MatchmakingServerDelegate methods
+-(void)matchmakingServerClientDidConnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerClientDidDisconnect:(NSString *)peerID {
+    
+}
+
+-(void)matchmakingServerSessionDidEnd {
+    
 }
 
 @end
