@@ -7,6 +7,7 @@
 //
 
 #import "MatchmakingServer.h"
+#import "PacketSendResults.h"
 
 typedef enum
 {
@@ -156,6 +157,24 @@ ServerState;
 - (void)receiveData:(NSData *)data fromPeer:(NSString *)peerID inSession:(GKSession *)session context:(void *)context
 {
 	CCLOG(@"MatchmakingServer: receive data from peer: %@, data: %@, length: %d", peerID, data, [data length]);
+    
+    Packet *packet = [Packet packetWithData:data];
+	if (packet == nil)
+	{
+		CCLOG(@"Invalid packet: %@", data);
+		return;
+	}
+    
+	[self serverReceivedPacket:packet];
+}
+
+- (void)serverReceivedPacket:(Packet *)packet
+{
+    switch (packet.packetType) {
+        case PacketTypeSendResults:
+            PacketSendResults *newPacket = (PacketSendResults *)packet;
+            break;
+    }
 }
 
 - (void)sendPacketToAllClients:(Packet *)packet

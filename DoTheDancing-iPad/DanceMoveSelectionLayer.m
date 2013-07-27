@@ -21,9 +21,9 @@
 @implementation DanceMoveSelectionLayer
 
 -(id)init {
-    CCLOG(@"DanceMoveSelectionLayer->init");
     self = [super init];
     if (self != nil) {
+        [GameManager sharedGameManager].server.delegate = self;
         self.screenSize = [CCDirector sharedDirector].winSize;
         self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
         [self addChild:self.batchNode];

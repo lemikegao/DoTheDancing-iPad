@@ -7,6 +7,7 @@
 //
 
 #import "Packet.h"
+#import "PacketSendResults.h"
 
 const size_t PACKET_HEADER_SIZE = 10;
 
@@ -47,6 +48,9 @@ const size_t PACKET_HEADER_SIZE = 10;
     
 	switch (packetType)
 	{
+        case PacketTypeSendResults:
+            packet = [PacketSendResults packetWithData:data];
+            break;
             
 		default:
 			CCLOG(@"Error: Packet has invalid type");

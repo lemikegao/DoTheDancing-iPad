@@ -35,6 +35,11 @@
 typedef enum
 {
 	PacketTypeStartDanceMoveDance = 0x64,      // server to client
+	PacketTypeAddPlayerWaitingRoom,             // server to client
+    PacketTypeRemovePlayerWaitingRoom,          // server to client
+    PacketTypeSegueToDanceMoveSelection,        // server to client
+    PacketTypeSegueToDanceMoveInstructions,     // server to client
+    PacketTypeSendResults,                      // client to server (phone to ipad)
 }
 PacketType;
 

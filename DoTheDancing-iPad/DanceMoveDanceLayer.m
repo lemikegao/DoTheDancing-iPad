@@ -52,6 +52,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
+        [GameManager sharedGameManager].server.delegate = self;
         self.screenSize = [CCDirector sharedDirector].winSize;
         self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
         [self addChild:self.batchNode];
@@ -231,7 +232,9 @@
         self.currentStepElapsedTime = 0;
         if (self.currentIteration == self.danceMove.numIndividualIterations) {
             // end in action
-            CCLOG(@"updateTimers: segue to results");
+            CCLOG(@"updateTimers: waiting for packet from device to segue to results");
+            [self unscheduleUpdate];
+            [self.illustration stopAllActions];
 //            [self segueToResults];
         } else {
             // move on to next iteration

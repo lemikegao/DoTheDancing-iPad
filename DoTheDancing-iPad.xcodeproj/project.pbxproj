@@ -28,6 +28,7 @@
 		C4514FB6165889C00073A119 /* SoundEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4514FB5165889C00073A119 /* SoundEffects.plist */; };
 		C4514FB916588A150073A119 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB816588A150073A119 /* MainMenuScene.m */; };
 		C4514FBC16588A350073A119 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FBB16588A350073A119 /* MainMenuLayer.m */; };
+		C45668EA17A3922A005FD5C0 /* PacketSendResults.m in Sources */ = {isa = PBXBuildFile; fileRef = C45668E917A3922A005FD5C0 /* PacketSendResults.m */; };
 		C45A072B172E28A1002ED7B7 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072A172E28A1002ED7B7 /* Packet.m */; };
 		C45A072E172E2A84002ED7B7 /* NSData+DTDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */; };
 		C45A0733172E54E4002ED7B7 /* mainmenu_bg-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C45A0732172E54E4002ED7B7 /* mainmenu_bg-ipad.png */; };
@@ -359,6 +360,8 @@
 		C4514FB816588A150073A119 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		C4514FBA16588A350073A119 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		C4514FBB16588A350073A119 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		C45668E817A3922A005FD5C0 /* PacketSendResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketSendResults.h; sourceTree = "<group>"; };
+		C45668E917A3922A005FD5C0 /* PacketSendResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSendResults.m; sourceTree = "<group>"; };
 		C45A0729172E28A1002ED7B7 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
 		C45A072A172E28A1002ED7B7 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packet.m; sourceTree = "<group>"; };
 		C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DTDAdditions.h"; sourceTree = "<group>"; };
@@ -776,6 +779,8 @@
 				C45A072A172E28A1002ED7B7 /* Packet.m */,
 				C4688D2C17374E8500EB027E /* PacketStartDanceMoveDance.h */,
 				C4688D2D17374E8500EB027E /* PacketStartDanceMoveDance.m */,
+				C45668E817A3922A005FD5C0 /* PacketSendResults.h */,
+				C45668E917A3922A005FD5C0 /* PacketSendResults.m */,
 				C45A072C172E2A84002ED7B7 /* NSData+DTDAdditions.h */,
 				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
@@ -1702,6 +1707,7 @@
 				C4688D2817370C4100EB027E /* ConnectedToDeviceScene.m in Sources */,
 				C4688D2B17370C4900EB027E /* ConnectedToDeviceLayer.m in Sources */,
 				C4688D2E17374E8500EB027E /* PacketStartDanceMoveDance.m in Sources */,
+				C45668EA17A3922A005FD5C0 /* PacketSendResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
