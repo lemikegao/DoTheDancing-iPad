@@ -343,9 +343,9 @@
 
 -(void)segueToResults {
     // add last step results
-    [self.danceIterationStepsDetected addObject:self.currentIterationStepsDetected];
-    [self updateIterationCountWithNum:self.currentIteration];
-    [self unscheduleUpdate];
+//    [self.danceIterationStepsDetected addObject:self.currentIterationStepsDetected];
+//    [self updateIterationCountWithNum:self.currentIteration];
+//    [self unscheduleUpdate];
     
     // pass results to game manager
     [GameManager sharedGameManager].danceMoveIterationResults = self.danceIterationStepsDetected;
@@ -366,6 +366,12 @@
 
 -(void)matchmakingServerSessionDidEnd {
     
+}
+
+- (void)matchmakingServerDidReceiveDanceMoveResults:(NSArray *)danceMoveResults
+{
+    self.danceIterationStepsDetected = [danceMoveResults mutableCopy];
+    [self segueToResults];
 }
 
 @end

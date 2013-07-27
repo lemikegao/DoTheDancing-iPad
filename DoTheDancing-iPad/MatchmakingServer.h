@@ -18,6 +18,10 @@
 -(void)matchmakingServerClientDidDisconnect:(NSString *)peerID;
 -(void)matchmakingServerSessionDidEnd;
 
+@optional
+
+- (void)matchmakingServerDidReceiveDanceMoveResults:(NSArray *)danceMoveResults;
+
 @end
 
 @interface MatchmakingServer : NSObject <GKSessionDelegate>

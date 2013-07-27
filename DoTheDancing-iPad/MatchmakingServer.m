@@ -171,9 +171,19 @@ ServerState;
 - (void)serverReceivedPacket:(Packet *)packet
 {
     switch (packet.packetType) {
-        case PacketTypeSendResults:
+        case PacketTypeSendResults: {
             PacketSendResults *newPacket = (PacketSendResults *)packet;
+            CCLOG(@"Received danceMoveResults: %@", newPacket.danceMoveResults);
+            if ([self.delegate respondsToSelector:@selector(matchmakingServerDidReceiveDanceMoveResults:)]) {
+                [self.delegate matchmakingServerDidReceiveDanceMoveResults:newPacket.danceMoveResults];
+            }
+            
             break;
+        }
+            
+        default:
+            CCLOG(@"Server received unexpected packet: %@", packet);
+			break;
     }
 }
 
