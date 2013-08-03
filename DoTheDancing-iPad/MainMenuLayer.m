@@ -60,13 +60,18 @@
 }
 
 -(void)displayMenu {
-    CCMenuItemLabel *connectButton = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Connect to Device" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
+    CCMenuItemLabel *singlePlayer = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Single Player" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
         // segue to 'Searching for Device...'
         [[GameManager sharedGameManager] runSceneWithID:kSceneTypeSearchingForDevice];
     }];
-    connectButton.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.5);
+    singlePlayer.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.55);
     
-    CCMenu *menu = [CCMenu menuWithItems:connectButton, nil];
+    CCMenuItemLabel *multiplayer = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Multiplayer" fontName:@"Helvetica" fontSize:40] block:^(id sender) {
+        [[GameManager sharedGameManager] runSceneWithID:kSceneTypeMultiplayerWaitingRoom];
+    }];
+    multiplayer.position = ccp(self.screenSize.width * 0.5, self.screenSize.height * 0.45);
+    
+    CCMenu *menu = [CCMenu menuWithItems:singlePlayer, multiplayer, nil];
     menu.position = ccp(0, 0);
     
     [self addChild:menu];

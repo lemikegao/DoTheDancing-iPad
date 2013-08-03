@@ -15,6 +15,7 @@
 #import "DanceMoveSeeInActionScene.h"
 #import "DanceMoveDanceScene.h"
 #import "DanceMoveResultsScene.h"
+#import "MultiplayerWaitingRoomScene.h"
 
 @interface GameManager()
 
@@ -185,6 +186,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveResults:
             result = @"kSceneTypeDanceMoveResults";
+            break;
+        case kSceneTypeMultiplayerWaitingRoom:
+            result = @"MultiplayerWaitingRoomScene";
             break;
         default:
             [NSException raise:NSGenericException format:@"Unexpected SceneType."];
@@ -379,6 +383,9 @@ static GameManager *_sharedGameManager = nil;   // singleton
             break;
         case kSceneTypeDanceMoveResults:
             sceneToRun = [DanceMoveResultsScene node];
+            break;
+        case kSceneTypeMultiplayerWaitingRoom:
+            sceneToRun = [MultiplayerWaitingRoomScene node];
             break;
         default:
             CCLOG(@"Unknown sceneID, cannot run scene");
