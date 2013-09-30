@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GameManager.h"
+#import "AVCamCaptureManager.h"
 #import "Flurry.h"
 
 @implementation AppController

@@ -24,6 +24,13 @@
 		C439C416172B5E0B00367A4B /* economica-bold_36-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */; };
 		C43AD61C1734DB4200ED1282 /* spritesheet-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = C43AD61A1734DB4200ED1282 /* spritesheet-ipad.plist */; };
 		C43AD61D1734DB4200ED1282 /* spritesheet-ipad.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = C43AD61B1734DB4200ED1282 /* spritesheet-ipad.pvr.ccz */; };
+		C43F4AF717F8E57900B094F6 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F4AF617F8E57900B094F6 /* AssetsLibrary.framework */; };
+		C43F4AF917F8E58900B094F6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F4AF817F8E58900B094F6 /* CoreMedia.framework */; };
+		C43F4AFB17F8E59200B094F6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F4AFA17F8E59200B094F6 /* MediaPlayer.framework */; };
+		C43F4AFD17F8E59A00B094F6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F4AFC17F8E59A00B094F6 /* MobileCoreServices.framework */; };
+		C43F4B0017F8EB8F00B094F6 /* AVCamCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C43F4AFF17F8EB8F00B094F6 /* AVCamCaptureManager.m */; };
+		C43F4B0417F8ECAD00B094F6 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C43F4B0317F8ECAD00B094F6 /* AVCamRecorder.m */; };
+		C43F4B0717F8ECC200B094F6 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C43F4B0617F8ECC200B094F6 /* AVCamUtilities.m */; };
 		C44C750D17A9988F00D4B550 /* MultiplayerWaitingRoomScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C44C750C17A9988F00D4B550 /* MultiplayerWaitingRoomScene.m */; };
 		C44C751017A9989B00D4B550 /* MultiplayerWaitingRoomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C44C750F17A9989B00D4B550 /* MultiplayerWaitingRoomLayer.m */; };
 		C4514FB1165882960073A119 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4514FB0165882960073A119 /* GameManager.m */; };
@@ -353,6 +360,16 @@
 		C439C414172B5E0B00367A4B /* economica-bold_36-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "economica-bold_36-hd.png"; sourceTree = "<group>"; };
 		C43AD61A1734DB4200ED1282 /* spritesheet-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-ipad.plist"; sourceTree = "<group>"; };
 		C43AD61B1734DB4200ED1282 /* spritesheet-ipad.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "spritesheet-ipad.pvr.ccz"; sourceTree = "<group>"; };
+		C43F4AF617F8E57900B094F6 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C43F4AF817F8E58900B094F6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C43F4AFA17F8E59200B094F6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C43F4AFC17F8E59A00B094F6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C43F4AFE17F8EB8F00B094F6 /* AVCamCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamCaptureManager.h; sourceTree = "<group>"; };
+		C43F4AFF17F8EB8F00B094F6 /* AVCamCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCaptureManager.m; sourceTree = "<group>"; };
+		C43F4B0217F8ECAD00B094F6 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		C43F4B0317F8ECAD00B094F6 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		C43F4B0517F8ECC200B094F6 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		C43F4B0617F8ECC200B094F6 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
 		C44C750B17A9988F00D4B550 /* MultiplayerWaitingRoomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerWaitingRoomScene.h; sourceTree = "<group>"; };
 		C44C750C17A9988F00D4B550 /* MultiplayerWaitingRoomScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerWaitingRoomScene.m; sourceTree = "<group>"; };
 		C44C750E17A9989B00D4B550 /* MultiplayerWaitingRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerWaitingRoomLayer.h; sourceTree = "<group>"; };
@@ -689,6 +706,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43F4AFD17F8E59A00B094F6 /* MobileCoreServices.framework in Frameworks */,
+				C43F4AFB17F8E59200B094F6 /* MediaPlayer.framework in Frameworks */,
+				C43F4AF917F8E58900B094F6 /* CoreMedia.framework in Frameworks */,
+				C43F4AF717F8E57900B094F6 /* AssetsLibrary.framework in Frameworks */,
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				C46D83F91667007800C6529A /* SystemConfiguration.framework in Frameworks */,
 				DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */,
@@ -791,6 +812,19 @@
 				C45A072D172E2A84002ED7B7 /* NSData+DTDAdditions.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		C43F4B0117F8EC9800B094F6 /* AVCam */ = {
+			isa = PBXGroup;
+			children = (
+				C43F4AFE17F8EB8F00B094F6 /* AVCamCaptureManager.h */,
+				C43F4AFF17F8EB8F00B094F6 /* AVCamCaptureManager.m */,
+				C43F4B0217F8ECAD00B094F6 /* AVCamRecorder.h */,
+				C43F4B0317F8ECAD00B094F6 /* AVCamRecorder.m */,
+				C43F4B0517F8ECC200B094F6 /* AVCamUtilities.h */,
+				C43F4B0617F8ECC200B094F6 /* AVCamUtilities.m */,
+			);
+			name = AVCam;
 			sourceTree = "<group>";
 		};
 		C44C750917A9986900D4B550 /* Multiplayer */ = {
@@ -914,6 +948,7 @@
 				C4993D2416576C46008187A8 /* Scenes */,
 				C4993D2616576C92008187A8 /* DanceMoves */,
 				C42FEB81172A00BB00B5DE03 /* Networking */,
+				C43F4B0117F8EC9800B094F6 /* AVCam */,
 				C4993D2716576C9F008187A8 /* Constants */,
 				C4993D2816576CA4008187A8 /* Singletons */,
 			);
@@ -1055,6 +1090,10 @@
 		DC0C49F4154AB4DD00B4B727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C43F4AFC17F8E59A00B094F6 /* MobileCoreServices.framework */,
+				C43F4AFA17F8E59200B094F6 /* MediaPlayer.framework */,
+				C43F4AF817F8E58900B094F6 /* CoreMedia.framework */,
+				C43F4AF617F8E57900B094F6 /* AssetsLibrary.framework */,
 				C46322441720F6C4007E39D5 /* CoreMotion.framework */,
 				C46D83F81667007800C6529A /* SystemConfiguration.framework */,
 				DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */,
@@ -1710,9 +1749,12 @@
 				DC0C4B7A154AB4DF00B4B727 /* AppDelegate.m in Sources */,
 				C4514FB1165882960073A119 /* GameManager.m in Sources */,
 				C4514FB916588A150073A119 /* MainMenuScene.m in Sources */,
+				C43F4B0017F8EB8F00B094F6 /* AVCamCaptureManager.m in Sources */,
 				C4514FBC16588A350073A119 /* MainMenuLayer.m in Sources */,
+				C43F4B0717F8ECC200B094F6 /* AVCamUtilities.m in Sources */,
 				C47F72B916DF90030006EEFB /* CCTouchDownMenu.m in Sources */,
 				C425AC1C1721FF9C008FE344 /* DanceMoveSelectionScene.m in Sources */,
+				C43F4B0417F8ECAD00B094F6 /* AVCamRecorder.m in Sources */,
 				C425AC1F1721FFA4008FE344 /* DanceMoveSelectionLayer.m in Sources */,
 				C425AC3517221DFE008FE344 /* DanceMoveInstructionsLayer.m in Sources */,
 				C425AC3817221E0D008FE344 /* DanceMoveInstructionsScene.m in Sources */,

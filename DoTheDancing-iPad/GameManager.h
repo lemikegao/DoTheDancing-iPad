@@ -11,8 +11,9 @@
 #import "SimpleAudioEngine.h"
 #import "DanceMove.h"
 #import "MatchmakingServer.h"
+#import "AVCamCaptureManager.h"
 
-@interface GameManager : NSObject
+@interface GameManager : NSObject <AVCamCaptureManagerDelegate>
 
 @property (nonatomic) BOOL isMusicOn;
 @property (nonatomic) BOOL isSoundEffectsOn;
@@ -27,6 +28,9 @@
 // networking
 @property (nonatomic, strong) MatchmakingServer *server;
 
+// video recording
+@property (nonatomic, strong) AVCamCaptureManager *captureManager;
+
 +(GameManager*)sharedGameManager;
 -(void)runSceneWithID:(SceneTypes)sceneID;
 -(void)setupAudioEngine;
@@ -36,5 +40,10 @@
 -(void)stopSoundEffect:(ALuint)soundEffectID;
 -(void)playBackgroundTrack:(NSString*)trackFileName;
 -(void)stopBackgroundTrack;
+
+/* Video Recording */
+-(void)setupVideoRecordingSession;
+-(void)startRecording;
+-(void)stopRecording;
 
 @end

@@ -52,6 +52,10 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
+        // start recording!
+        [[GameManager sharedGameManager] setupVideoRecordingSession];
+        [[GameManager sharedGameManager] startRecording];
+        
         [GameManager sharedGameManager].server.delegate = self;
         self.screenSize = [CCDirector sharedDirector].winSize;
         self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.pvr.ccz"];
@@ -342,10 +346,8 @@
 
 
 -(void)segueToResults {
-    // add last step results
-//    [self.danceIterationStepsDetected addObject:self.currentIterationStepsDetected];
-//    [self updateIterationCountWithNum:self.currentIteration];
-//    [self unscheduleUpdate];
+    // stop recording
+    [[GameManager sharedGameManager] stopRecording];
     
     // pass results to game manager
     [GameManager sharedGameManager].danceMoveIterationResults = self.danceIterationStepsDetected;

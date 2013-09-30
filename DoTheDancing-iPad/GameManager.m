@@ -67,6 +67,10 @@ static GameManager *_sharedGameManager = nil;   // singleton
         
         // networking
         _server = nil;
+        
+        // AVCamCaptureManager
+        _captureManager = [[AVCamCaptureManager alloc] init];
+        _captureManager.delegate = self;
     }
     
     return self;
@@ -411,6 +415,28 @@ static GameManager *_sharedGameManager = nil;   // singleton
 //    [self performSelectorInBackground:@selector(unloadAudioForSceneWithID:) withObject:[NSNumber numberWithInt:oldScene]];
     
     self.currentScene = sceneID;
+}
+
+#pragma mark - Video Recording
+-(void)setupVideoRecordingSession
+{
+    [self.captureManager setupSession];
+    
+    // Start the session. This is done asychronously since -startRunning doesn't return until the session is running.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[[self captureManager] session] startRunning];
+    });
+}
+
+-(void)startRecording;
+{
+    [self.captureManager startRecording];
+}
+
+-(void)stopRecording
+{
+    [self.captureManager stopRecording];
+    [self.captureManager.session stopRunning];
 }
 
 @end
